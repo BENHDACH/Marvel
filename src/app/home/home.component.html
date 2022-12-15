@@ -1,0 +1,8 @@
+<p>Home page Example </p>
+<ng-container *ngFor="let i of numbers" class="w3-padding general">
+    <!-- We should make an app-country (country component) to make it better -->
+    <p>{{country[i].name | uppercase }}</p>
+    <img [src]="country[i].img" width="100px"/>
+    <br>
+</ng-container>
+
