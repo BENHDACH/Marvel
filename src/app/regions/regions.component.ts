@@ -16,6 +16,6 @@ export class RegionsComponent implements OnInit {
     )
   }
 
-      
+
 
 }
