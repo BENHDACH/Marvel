@@ -23,6 +23,18 @@ export class HomeComponent implements OnInit {
           console.log("Show the country name :",this.country[0].img)
         }
     )
+
+   this.dataService.getRegion().subscribe(
+      (data : any[]) => {
+        console.log("Voici mes regions :",data)
+      }
+    )
+
+    this.dataService.getLanguage().subscribe(
+      (tab : any[]) => {
+        console.log("Voici les langues :",tab)
+      }
+    )
   }
 
 }

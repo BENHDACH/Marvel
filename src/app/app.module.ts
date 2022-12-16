@@ -7,7 +7,10 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
+
 import { AboutComponent } from './about/about.component';
+import { LanguagesComponent } from './languages/languages.component';
+import { RegionsComponent } from './regions/regions.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +18,9 @@ import { AboutComponent } from './about/about.component';
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    AboutComponent
+    AboutComponent,
+    LanguagesComponent,
+    RegionsComponent
   ],
   imports: [
     BrowserModule,

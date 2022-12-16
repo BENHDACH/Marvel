@@ -1,0 +1,16 @@
+<!-- A better way will be to put {{ Country[i].region }} and make a router link /:region >> TO DO ! -->
+<!-- even better to have a tab with all different region if a region was put we don't show it again -->
+<span class="w3-padding"><a routerLink="/home" routerLinkActive="gras">Europe</a></span>
+<span class="w3-padding"><a routerLink="/about" routerLinkActive="gras">Africa</a></span>
+<span class="w3-padding"><a routerLink="/Languages" routerLinkActive="gras">Oceania</a></span>
+<span class="w3-padding"><a routerLink="/Regions" routerLinkActive="gras">North-America</a></span>
+<span class="w3-padding"><a routerLink="/Regions" routerLinkActive="gras">South-America</a></span>
+<span class="w3-padding"><a routerLink="/Regions" routerLinkActive="gras">Asia</a></span>
+<span class="w3-padding"><a routerLink="/Regions" routerLinkActive="gras">Atlantique</a></span>
+<span class="w3-padding"><a routerLink="/Regions" routerLinkActive="gras">Pacifique</a></span>
+
+<!-- add a routing "/From/:{element}"-->
+<ng-container *ngFor="let element of Region" class="w3-padding general">
+  <a [routerLink]="['/From', element]">{{ element | uppercase }}</a>&nbsp;
+  <br>
+</ng-container>
