@@ -1,0 +1,6 @@
+<div class="w3-col w3-padding general">
+    <ng-container *ngFor="let letter of letters">
+        <a [routerLink]="['/home', letter]">{{ letter }}</a>&nbsp;
+    </ng-container>
+    <button (click)="all()">Show all the countries</button>
+</div>
