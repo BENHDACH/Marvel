@@ -1,11 +1,10 @@
 
-<!-- add a routing "/Speaker/:{element}"-->
 <!-- Language is an array of all existing language ;  -->
 <button (click)="ShowNumber()">Show information On Languages</button>
 <ng-container *ngFor="let element of Language" class="w3-padding general">
   <br>
-  <a [routerLink]="['/Speaker', element]">{{ element[0] | uppercase }}</a>&nbsp;
-  <a [hidden]="isHidden"> is spoken by {{ element[1] }} countries around the world ! </a>
-  <br>
+  <a [routerLink]="['/Speaking', element[0]]">{{ element[0] | uppercase }}</a>&nbsp;
+  <a [hidden]="isHidden" *ngIf="element[1]==1"> is spoken by {{ element[1] }} country around the world ! </a>
+  <a [hidden]="isHidden" *ngIf="element[1]>1"> is spoken by {{ element[1] }} countries around the world ! </a>
 </ng-container>
 

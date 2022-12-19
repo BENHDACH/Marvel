@@ -3,30 +3,26 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { DataService } from '../data.service';
 
 @Component({
-  selector: 'app-from',
-  templateUrl: './from.component.html',
-  styleUrls: ['./from.component.css']
+  selector: 'app-detail',
+  templateUrl: './detail.component.html',
+  styleUrls: ['./detail.component.css']
 })
-export class FromComponent implements OnInit {
+export class DetailComponent implements OnInit {
   country: any[] = []
   constructor(
     private route: ActivatedRoute,
     private router: Router,
     private dataService: DataService) { }
 
-  ngOnInit(): void
-  {
-    /* ------ There we get countries from the region chosen ------ */
+  ngOnInit(): void {
     this.route.paramMap.subscribe(
-      (params) =>
-      {
-        console.log("Voici la region:",params.get('Region'))
-        this.dataService.getCountryFilteredByRegion(params.get('Region') ?? '').subscribe(
+      (params) => {
+        console.log("Voici la region:",params.get('Name'))
+        this.dataService.getCountryFilteredByName(params.get('Name') ?? '').subscribe(
         (data : any[]) => {
           this.country = data
         }
       )}
     )
   }
-
 }

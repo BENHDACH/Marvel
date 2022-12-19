@@ -3,11 +3,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { DataService } from '../data.service';
 
 @Component({
-  selector: 'app-from',
-  templateUrl: './from.component.html',
-  styleUrls: ['./from.component.css']
+  selector: 'app-using',
+  templateUrl: './using.component.html',
+  styleUrls: ['./using.component.css']
 })
-export class FromComponent implements OnInit {
+export class UsingComponent implements OnInit {
+
   country: any[] = []
   constructor(
     private route: ActivatedRoute,
@@ -16,13 +17,13 @@ export class FromComponent implements OnInit {
 
   ngOnInit(): void
   {
-    /* ------ There we get countries from the region chosen ------ */
+    /* ------ There we get countries using the currency chosen ------ */
     this.route.paramMap.subscribe(
       (params) =>
       {
-        console.log("Voici la region:",params.get('Region'))
-        this.dataService.getCountryFilteredByRegion(params.get('Region') ?? '').subscribe(
-        (data : any[]) => {
+        this.dataService.getCountryFilteredByCurrency(params.get('currency') ?? '').subscribe(
+        (data : any[]) =>
+        {
           this.country = data
         }
       )}

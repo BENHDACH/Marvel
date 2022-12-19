@@ -11,6 +11,11 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { LanguagesComponent } from './languages/languages.component';
 import { RegionsComponent } from './regions/regions.component';
+import { FromComponent } from './from/from.component';
+import { SpeakingComponent } from './speaking/speaking.component';
+import { CurrencyComponent } from './currency/currency.component';
+import { UsingComponent } from './using/using.component';
+import { DetailComponent } from './detail/detail.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +25,12 @@ import { RegionsComponent } from './regions/regions.component';
     HomeComponent,
     AboutComponent,
     LanguagesComponent,
-    RegionsComponent
+    RegionsComponent,
+    FromComponent,
+    SpeakingComponent,
+    CurrencyComponent,
+    UsingComponent,
+    DetailComponent
   ],
   imports: [
     BrowserModule,

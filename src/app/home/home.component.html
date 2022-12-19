@@ -1,8 +1,79 @@
-<p>Home page Example </p>
-<ng-container *ngFor="let i of numbers" class="w3-padding general">
-    <!-- We should make an app-country (country component) to make it better -->
-    <p>{{country[i].name }}</p>
-    <img [src]="country[i].img" width="100px"/>
-    <br>
+
+<!-- ADD A NAV BAR with letters before the advanced search to test out then hide it when isShown change -->
+<!-- The NAV BAR should be linked (in the .TS) to this.country to be display in the ngFor below -->
+
+<div [hidden]="isHidden">
+  <FORM>
+    <input type="text" name="sethu" id="NameSearch" value="" />
+    <p>Search Name by Letter, Part or Full</p>
+  </FORM>
+  <FORM>
+    <input type="number" name="sethu" id="min" value="" />
+    <p> Search countries with an area superior or equal to this value (km2).</p>
+  </FORM>
+  <FORM>
+    <input type="number" name="sethu" id="max" value="" />
+    <p> Search countries with an area inferior or equal to this value (km2). </p>
+  </FORM>
+  <FORM>
+    <input type="number" name="sethu" id="minPop" value=""/>
+    <p>Search countries with a population superior or equal to this value.</p>
+  </FORM>
+  <FORM>
+    <input type="number" name="sethu" id="maxPop" value="" />
+    <p>Search countries with a population inferior or equal to this value.</p>
+  </FORM>
+
+  <select name="select" id="land">
+    <option value="true">Landlocked</option>
+    <option value="Both" selected>------</option>
+    <option value="false">Not Landlocked</option>
+  </select>
+  <p>Select if the country is landlocked or not</p>
+
+  <select name="select2" id="UN">
+    <option value="true">U.N member</option>
+    <option value="Both" selected>------</option>
+    <option value="false">Not an U.N member</option>
+  </select>
+  <p>Select if the country is a U.N member or not</p>
+
+  <select  name="select3" id="Dp">
+    <option value="true">Independent</option>
+    <option value="Both" selected>------</option>
+    <option value="false">Not Independent</option>
+  </select>
+  <p>Select if the country is independent or not</p>
+
+  <select name="select3" id="SUB">
+    <ng-container *ngFor="let element of subR">
+    <option value="{{element}}">{{element}}</option>
+    </ng-container>
+    <option value="Any" selected>------</option>
+  </select>
+  <p>Select if the country a subregion</p>
+  <br>
+  <p >Enter the value in any of the above, then click on Launch Advanced Search</p>
+  <input type="button" value="Launch Advanced Search" (click)="Advanced()"/>
+</div>
+<input [hidden]="isShown" type="button" value="Show Advanced Search" (click)="ShowHidden()"/>
+<input [hidden]="isHidden" type="button" value="Hide Advanced Search" (click)="ShowHidden()" />
+
+
+<div [hidden]="isShown">
+  <p>There click on the flag and see more information !</p>
+  <p>{{countryOfTheDay[0].name}}</p>
+  <a [routerLink]="['/Detail', countryOfTheDay[0].name]">
+    <img [src]="countryOfTheDay[0].img" width="100px" ><img/>
+  </a>&nbsp;
+</div>
+
+
+<ng-container *ngFor="let element of country" class="w3-padding general">
+  <!-- We should make an app-country (country component) to make it better -->
+    <p>{{element.name }}</p>
+  <a [routerLink]="['/Detail', element.name]">
+    <img [src]="element.img" width="100px" ><img/>
+  </a>&nbsp;
 </ng-container>
 
