@@ -1,0 +1,8 @@
+<div *ngFor="let current of country">
+  <p>{{current.name}}</p>
+  <a [routerLink]="['/Detail', current.name]">
+    <img [src]="current.img" width="100px"/>
+  </a>
+  <br>
+
+</div>

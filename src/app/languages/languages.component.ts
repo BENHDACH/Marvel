@@ -11,16 +11,18 @@ export class LanguagesComponent implements OnInit {
   isHidden: boolean = true;
   constructor(private dataService: DataService) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void
+  {
+    /* ------ There we get an array of all languages which are being spoken (official language) ------ */
     this.dataService.getLanguage().subscribe(
-      (data : any[]) => {
+      (data : any[]) =>
+      {
         this.Language = data
-        console.log("Try this out:",this.Language[0][1])
-      }
-
-    )
+      })
   }
-  ShowNumber(): void{
+  /* ------ We show information hidden if wanted by the client ------ */
+  ShowNumber(): void
+  {
     this.isHidden=!this.isHidden
   }
 

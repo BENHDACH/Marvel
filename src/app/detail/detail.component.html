@@ -1,0 +1,12 @@
+<div *ngFor="let current of country">
+  <p>{{current.name}}</p>
+  <img [src]="current.img" width="100px"/>
+  <p>{{current.name}} is a country from {{current.region}} on the part of {{current.subRegion}}.</p>
+  <p> It's capital is {{current.capital}}.</p>
+  <p>and possess a population of {{current.population}} inhabitants for an area of {{current.size}} km2.</p>
+  <p *ngIf="current.landlocked==true"> This country is landlocked.</p>
+  <p *ngIf="current.independent==false"> This country is not independent</p>
+  <div *ngIf="current.imgArmy!=null"><img [src]="current.imgArmy" width="100px"> <p>Military Flag</p></div>
+  <br>
+
+</div>

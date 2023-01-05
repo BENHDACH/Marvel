@@ -1,0 +1,9 @@
+
+
+<button (click)="ShowNumber()">Show information On Currencies</button>
+<ng-container *ngFor="let element of Currency" class="w3-padding general">
+  <br>
+  <a [routerLink]="['/Using', element[0]]">{{ element[0] | uppercase }}</a>&nbsp;
+  <a [hidden]="isHidden" *ngIf="element[1]==1"> is used by {{ element[1] }} country around the world ! </a>
+  <a [hidden]="isHidden" *ngIf="element[1]>1"> is used by {{ element[1] }} countries around the world ! </a>
+</ng-container>

@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+header.w3-cell-row.general {
+  font-family: 'Roboto', sans-serif;
+}
+
+header.w3-cell-row.general .w3-cell {
+  display: flex;
+  align-items: center;
+}
+
+header.w3-cell-row.general a {
+  text-decoration: none;
+}
+
+header.w3-cell-row.general .w3-padding {
+  padding: 0.5em;
+}
+
+header.w3-cell-row.general a.gras {
+  font-weight: bold;
+}
+header.w3-cell-row.general {
+  background-color: rgb(115, 153, 197);
+}
+
+header.w3-cell-row.general a {
+  color: rgb(22, 56, 92);
+}
+
+header.w3-cell-row.general img {
+  height: 80px;
+}
+header.w3-cell-row.general a:hover {
+  color: #333;
+  background-color: #fff;
+}
+

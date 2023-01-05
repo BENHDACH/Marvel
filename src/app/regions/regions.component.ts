@@ -10,12 +10,14 @@ export class RegionsComponent implements OnInit {
   Region: any[] = []
   constructor(private dataService: DataService) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void
+  {
+    /* ------ There we get an array of all regions existing ------ */
     this.dataService.getRegion().subscribe(
       (data : any[]) => this.Region = data
     )
   }
 
-      
+
 
 }
